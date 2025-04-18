@@ -146,7 +146,8 @@ def compute_areas(path):
     # load img
     img = load_img(path)
     _, _, D = img.shape
-    tumor_area = []
+    tumor_areas = []
+    bg_areas = []
     bg_matrix = []
     tumor_matrix = []
     # iterate over slices
@@ -155,13 +156,14 @@ def compute_areas(path):
         tumor_contours = get_tumor_contours(slice)
         # triangulation of tumor and background
         tumor_area, _, tumor_m = tumor_triangulation(tumor_contours, slice)
-        bg_area, _, background_m = bg_triangulation(slice, tumor_contours, tumor_area)
+        bg_area, _, bg_m = bg_triangulation(slice, tumor_contours, tumor_area)
         # store values
-        tumor_matrix.append(tumor_area)
-        tumor_area.append(tumor_m)
-        bg_matrix.append(background_m)
+        tumor_areas.append(tumor_area)
+        tumor_matrix.append(tumor_m)
+        bg_areas.append(bg_area)
+        bg_matrix.append(bg_m)
 
-    return tumor_area, bg_area, tumor_matrix, bg_matrix
+    return tumor_areas, bg_areas, tumor_matrix, bg_matrix
 
 
 def plot_background_triangulation(mask, bg_points, bg_simplices):

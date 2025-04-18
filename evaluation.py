@@ -6,7 +6,7 @@ from triangulation import compute_areas
 from tqdm import tqdm
 
 # Folder with patient files
-dataset_folder = 'datasets/brats_2017/WT/'
+dataset_folder = 'datasets/WT/'
 patient_files = glob(os.path.join(dataset_folder, '*.nii'))
 
 # Counters
