@@ -216,7 +216,7 @@ def plot_tumor_triangulation(mask, tumor_triangulations):
     plt.show()
 
 
-def plot_tumor_comparison(time1, tumor_area1, time2, tumor_area2, label1="Case 1", label2="Case 2"):
+def plot_tumor_comparison(time1, tumor_area1, time2, tumor_area2, label1="Tumor area 1", label2="Tumor area 2", title= "Comparison of Tumor Area Evolution"):
     '''
     Plot tumor area comparison between 2 areas
     '''
@@ -229,9 +229,29 @@ def plot_tumor_comparison(time1, tumor_area1, time2, tumor_area2, label1="Case 1
     plt.plot(time2, tumor_area2, linestyle='-', color='blue', linewidth=2, label=label2)
 
     # Labels and title
-    plt.xlabel("Slices", fontsize=12, fontweight='bold')
+    plt.xlabel("Time", fontsize=12, fontweight='bold')
     plt.ylabel("Tumor Area", fontsize=12, fontweight='bold')
-    plt.title("Comparison of Tumor Area Evolution", fontsize=14, fontweight='bold')
+    plt.title(title, fontsize=14, fontweight='bold')
+
+    # Improve visualization
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.xticks(fontsize=10)
+    plt.yticks(fontsize=10)
+    plt.legend()
+
+    plt.show()
+
+
+def plot_tumor_evolution(time, tumor_area, label="Tumor Area",title ="Tumor Area Evolution"):
+    plt.figure(figsize=(8, 5))
+
+    # Plot tumor evolution
+    plt.plot(time, tumor_area, linestyle='-', color='red', linewidth=2, label=label)
+
+    # Labels and title
+    plt.xlabel("Time", fontsize=12, fontweight='bold')
+    plt.ylabel("Tumor Area", fontsize=12, fontweight='bold')
+    plt.title(title, fontsize=14, fontweight='bold')
 
     # Improve visualization
     plt.grid(True, linestyle='--', alpha=0.7)
