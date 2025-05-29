@@ -12,8 +12,7 @@ This repository contains the code and experiments conducted as part of my Master
    Before running the evaluation script, make sure to unzip the `datasets` folder.
 
 3. **Create and activate a virtual environment**:  
-   `python -m venv venv && source venv/bin/activate`<br>
-   or `python3 -m venv venv && source venv/bin/activate`<br>
+   `python3.10 -m venv venv && source venv/bin/activate`<br>
    *(On Windows: `venv\Scripts\activate`)*
 
 5. **Install the required packages**:  
