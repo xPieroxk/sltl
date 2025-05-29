@@ -5,18 +5,17 @@ This repository contains the code and experiments conducted as part of my Master
 ## Setup
 
 1. **Clone the repository and navigate to it**:  
-   `git clone https://github.com/xPieroxk/sltl.git`
-
+   `git clone https://github.com/xPieroxk/sltl.git`<br>
    `cd sltl`
 
 2. **Unzip the dataset**:  
    Before running the evaluation script, make sure to unzip the `datasets` folder.
 
 3. **Create and activate a virtual environment**:  
-   `python -m venv venv && source venv/bin/activate`  
+   `python3.10 -m venv venv && source venv/bin/activate`<br>
    *(On Windows: `venv\Scripts\activate`)*
 
-4. **Install the required packages**:  
+5. **Install the required packages**:  
    `pip install -r requirements.txt`
 
 ## Running the Script
